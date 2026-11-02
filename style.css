@@ -142,8 +142,8 @@ header {
 }
 
 header img {
-    width: 30%;
-    height: 350px;
+    width: 20%;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
 }
