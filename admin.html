@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h2>dot. ADMIN</h2>
+        <a href="index.html">Visit Store</a>
+    </nav>
+
+    <!-- Login -->
+    <div id="login">
+        <h2>Admin Login</h2>
+
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="error"></p>
+    </div>
+
+    <!-- Dashboard -->
+    <main id="dashboard" style="display:none; padding:30px 8%;">
+
+        <h1>Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+
+        <div class="stats">
+            <div>Products: <b id="product-count">0</b></div>
+            <div>Orders: <b id="order-count">0</b></div>
+        </div>
+
+        <!-- Add / Edit Product -->
+        <div class="admin-box">
+            <h2 id="heading">Add Product</h2>
+
+            <form id="product-form">
+                <input type="hidden" id="edit-id">
+
+                <input type="text" id="pname" placeholder="Product Name" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <input type="url" id="image" placeholder="Image URL" required>
+
+                <button type="submit">Save Product</button>
+                <button type="button" onclick="cancelEdit()">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Product Management -->
+        <div class="admin-box">
+            <h2>Manage Products</h2>
+            <div id="product-list"></div>
+        </div>
+
+        <!-- Orders -->
+        <div class="admin-box">
+            <h2>Customer Orders</h2>
+            <div id="order-list"></div>
+        </div>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
