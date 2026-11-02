@@ -1,73 +1,72 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>dot Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <title>dot Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav>
-        <h2>dot.</h2>
-        <a href="admin.html">Admin Panel</a>
-        <a href="#cart">Cart (<span id="count">0</span>)</a>
-    </nav>
+  <nav>
+    <h2>dot.</h2>
+    <a href="admin.html">Admin Panel</a>
+    <a href="#cart">Cart (<span id="count">0</span>)</a>
+  </nav>
 
-    <header>
+  <header>
     <div>
-        <h1>Simple Shopping.</h1>
-        <p>Discover productss for everyday life.</p>
+      <h1>Simple Shopping</h1>
+      <p>Discover products for everyday life</p>
     </div>
 
-    <img src="https://virtualreality.com.pk/wp-content/uploads/2025/02/Ecommerce-Platforms.png"
-         alt="Shopping Store">
-</header>
+    <img src="https://virtualreality.com.pk/wp-content/uploads/2025/02/Ecommerce-Platforms.png" alt="Shopping Store">
+  </header>
 
-    <!-- productss -->
-    <section>
-        <h2>Our productss</h2>
-        <div id="productss" class="grid"></div>
-    </section>
+  <!-- products -->
+  <section>
+    <h2>Our products</h2>
+    <div id="productss" class="grid"></div>
+  </section>
 
-    <!-- Cart -->
-    <section id="cart">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items">Your cart is empty.</div>
-        <h3>Total: Rs. <span id="total">0</span></h3>
-    </section>
+  <!-- Cart -->
+  <section id="cart">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items">Your cart is empty</div>
+    <h3>Total: Rs. <span id="total">0</span></h3>
+  </section>
 
-    <!-- Checkout -->
-    <section>
-        <h2>Checkout</h2>
+  <!-- Checkout -->
+  <section>
+    <h2>Checkout</h2>
 
-        <form id="order-form">
+    <form id="order-form">
 
-            <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="name" placeholder="Full Name" required>
 
-            <input type="tel" id="phone" placeholder="03XXXXXXXXX"
-                   pattern="03[0-9]{9}" required>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
 
-            <textarea id="address" placeholder="Delivery Address"
-                      required minlength="10"></textarea>
+      <textarea id="address" placeholder="Delivery Address" required minlength="10"></textarea>
 
-            <select id="payment" required>
-                <option value="">Payment Method</option>
-                <option>Cash on Delivery</option>
-                <option>Advance Payment</option>
-            </select>
+      <select id="payment" required>
+        <option value="">Payment Method</option>
+        <option>Cash on Delivery</option>
+        <option>Advance Payment</option>
+      </select>
 
-            <button type="submit">Place Order</button>
+      <button type="submit">Place Order</button>
 
-        </form>
+    </form>
 
-        <p id="message"></p>
-    </section>
+    <p id="message"></p>
+  </section>
 
-    <footer>
-        <p>© 2026 dot STORE</p>
-    </footer>
+  <footer>
+    <p>© 2026 dot STORE</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
