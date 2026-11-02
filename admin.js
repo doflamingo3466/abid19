@@ -41,18 +41,18 @@ function logout() {
     location.reload();
 }
 
-// Display Products and Orders
+// Display productss and Orders
 function showData() {
 
-    let products = JSON.parse(localStorage.getItem("products")) || [];
+    let productss = JSON.parse(localStorage.getItem("productss")) || [];
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-    document.getElementById("product-count").innerText = products.length;
+    document.getElementById("product-count").innerText = productss.length;
     document.getElementById("order-count").innerText = orders.length;
 
     let output = "";
 
-    products.forEach(p => {
+    productss.forEach(p => {
         output += `
         <div class="admin-product">
             ${p.name} - Rs. ${p.price}
@@ -63,7 +63,7 @@ function showData() {
         </div>`;
     });
 
-    document.getElementById("product-list").innerHTML = output || "No products.";
+    document.getElementById("product-list").innerHTML = output || "No productss.";
 
     // Show Orders
     output = "";
@@ -77,7 +77,7 @@ function showData() {
             <p>Address: ${o.address}</p>
             <p>Payment: ${o.payment}</p>
             <p>Total: Rs. ${o.total}</p>
-            <p>Products: ${o.items.map(p => p.name + " x " + p.qty).join(", ")}</p>
+            <p>productss: ${o.items.map(p => p.name + " x " + p.qty).join(", ")}</p>
 
             Status:
             <select onchange="updateStatus(${o.id}, this.value)">
@@ -97,7 +97,7 @@ document.getElementById("product-form").onsubmit = function(e) {
 
     e.preventDefault();
 
-    let products = JSON.parse(localStorage.getItem("products")) || [];
+    let productss = JSON.parse(localStorage.getItem("productss")) || [];
     let id = document.getElementById("edit-id").value;
 
     let product = {
@@ -108,12 +108,12 @@ document.getElementById("product-form").onsubmit = function(e) {
     };
 
     if (id) {
-        products = products.map(p => p.id === Number(id) ? product : p);
+        productss = productss.map(p => p.id === Number(id) ? product : p);
     } else {
-        products.push(product);
+        productss.push(product);
     }
 
-    localStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem("productss", JSON.stringify(productss));
 
     this.reset();
     cancelEdit();
@@ -123,8 +123,8 @@ document.getElementById("product-form").onsubmit = function(e) {
 // Edit Product
 function editProduct(id) {
 
-    let products = JSON.parse(localStorage.getItem("products")) || [];
-    let p = products.find(p => p.id === id);
+    let productss = JSON.parse(localStorage.getItem("productss")) || [];
+    let p = productss.find(p => p.id === id);
 
     document.getElementById("edit-id").value = p.id;
     document.getElementById("pname").value = p.name;
@@ -146,11 +146,11 @@ function deleteProduct(id) {
 
     if (confirm("Delete this product?")) {
 
-        let products = JSON.parse(localStorage.getItem("products")) || [];
+        let productss = JSON.parse(localStorage.getItem("productss")) || [];
 
-        products = products.filter(p => p.id !== id);
+        productss = productss.filter(p => p.id !== id);
 
-        localStorage.setItem("products", JSON.stringify(products));
+        localStorage.setItem("productss", JSON.stringify(productss));
 
         showData();
     }

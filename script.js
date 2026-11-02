@@ -1,23 +1,23 @@
 
-// Default Products
-let products = JSON.parse(localStorage.getItem("products")) || [
+// Default productss
+let productss = JSON.parse(localStorage.getItem("productss")) || [
     {id: 1, name: "Watch", price: 3500, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ietlXBerSvPZepfhzXVWKyuz7ZJTEFsVJ6Eb6qedNQ&s=10"},
     {id: 2, name: "Headphones", price: 4500, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvIlNTMsopEZOienQdJaEOa0T0CwV0GtUCosPVjcx85g&s=10"},
     {id: 3, name: "Backpack", price: 2800, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoVmb5SGXtiZfHLabaHTkeIHJDK8qSX4r5LSsmSDSdA&s=10"}
 ];
 
-localStorage.setItem("products", JSON.stringify(products));
+localStorage.setItem("productss", JSON.stringify(productss));
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Display Products
-function showProducts() {
+// Display productss
+function showproductss() {
 
-    products = JSON.parse(localStorage.getItem("products")) || [];
+    productss = JSON.parse(localStorage.getItem("productss")) || [];
 
     let output = "";
 
-    products.forEach(p => {
+    productss.forEach(p => {
         output += `
         <div class="card">
             <img src="${p.image}" alt="${p.name}">
@@ -27,7 +27,7 @@ function showProducts() {
         </div>`;
     });
 
-    document.getElementById("products").innerHTML = output;
+    document.getElementById("productss").innerHTML = output;
 }
 
 // Add to Cart
@@ -38,7 +38,7 @@ function addCart(id) {
     if (item) {
         item.qty++;
     } else {
-        let p = products.find(p => p.id === id);
+        let p = productss.find(p => p.id === id);
         cart.push({...p, qty: 1});
     }
 
@@ -133,5 +133,5 @@ document.getElementById("order-form").onsubmit = function(e) {
         "Order placed successfully! Order ID: " + order.id;
 };
 
-showProducts();
+showproductss();
 saveCart();
