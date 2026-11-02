@@ -1,6 +1,10 @@
 
 // Default Products
-let products = JSON.parse(localStorage.getItem("products")) || [];
+let products = JSON.parse(localStorage.getItem("products")) || [
+    {id: 1, name: "Watch", price: 3500, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ietlXBerSvPZepfhzXVWKyuz7ZJTEFsVJ6Eb6qedNQ&s=10"},
+    {id: 2, name: "Headphones", price: 4500, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvIlNTMsopEZOienQdJaEOa0T0CwV0GtUCosPVjcx85g&s=10"},
+    {id: 3, name: "Backpack", price: 2800, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoVmb5SGXtiZfHLabaHTkeIHJDK8qSX4r5LSsmSDSdA&s=10"}
+];
 
 localStorage.setItem("products", JSON.stringify(products));
 
